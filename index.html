@@ -534,7 +534,14 @@
       if (!card) return;
       const toBlob = (b64, type) => { const bin = atob(b64.trim()), a = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return new Blob([a], { type }); };
       /* If certificates/Python_IBM.pdf exists on the host, the plain link opens it in a new tab (like a normal PDF link). Otherwise use the built-in viewer below. */
-      fetch(card.href, { method: 'HEAD', cache: 'no-store' }).then(r => { if (r.ok && /pdf/i.test(r.headers.get('content-type') || '')) card.dataset.ok = '1'; }).catch(() => {});
+      (async () => {
+        for (const name of ['certificates/Python_IBM.pdf', 'certificates/Phython_IBM.pdf']) {
+          try {
+            const r = await fetch(name, { method: 'HEAD', cache: 'no-store' });
+            if (r.ok && /pdf/i.test(r.headers.get('content-type') || '')) { card.setAttribute('href', name); card.dataset.ok = '1'; return; }
+          } catch (err) {}
+        }
+      })();
       const show = e => {
         if (card.dataset.ok === '1') return;
         e.preventDefault();
