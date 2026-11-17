@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adfar Amin Wani | Digital Marketer – SEO, Social Media & Content</title>
-  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="Adfar Amin Wani is a fresher digital marketer trained in SEO, social media marketing, content marketing, Google Ads and analytics. See my certifications and get in touch.">
   <meta name="keywords" content="Adfar Amin Wani, digital marketer, fresher digital marketer, SEO, social media marketing, content marketing, Google Ads, email marketing, digital marketing portfolio">
   <meta name="author" content="Adfar Amin Wani">
@@ -181,20 +180,30 @@
     .empty-ico { font-size: 3rem; margin-bottom: 10px; }
     .empty h3 { font-size: 1.4rem; margin-bottom: 8px; }
     .empty p { color: var(--muted); margin-bottom: 22px; }
-    .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 420px)); gap: 26px; justify-content: center; }
-    .cert { display: block; padding: 0; overflow: hidden; cursor: pointer; }
-    .cert-img { position: relative; background: #fff; overflow: hidden; aspect-ratio: 1287 / 909; }
+    .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 360px)); gap: 22px; justify-content: center; align-items: stretch; }
+    .cert { display: flex; flex-direction: column; padding: 0; overflow: hidden; cursor: pointer; }
+    .cert-img { position: relative; background: #fff; overflow: hidden; aspect-ratio: 1.7 / 1; flex: none; }
     .cert-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .4s; }
     .cert:hover .cert-img img { transform: scale(1.05); filter: brightness(.55); }
     .cert-badge { position: absolute; left: 12px; top: 12px; padding: 5px 12px; border-radius: 99px; font-size: .75rem; font-weight: 600; color: #fff; background: var(--grad); box-shadow: 0 6px 18px rgba(0,0,0,.3); }
     .cert-open { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 1.1rem; opacity: 0; transition: opacity .35s; }
     .cert:hover .cert-open, .cert:focus-visible .cert-open { opacity: 1; }
-    .cert .body { padding: 22px 24px 26px; }
+    .cert .body { padding: 18px 20px 22px; display: flex; flex-direction: column; align-items: flex-start; flex: 1; }
     .cert-tag { font-size: .75rem; padding: 4px 10px; border-radius: 8px; background: rgba(124,92,255,.15); color: var(--accent-2); }
-    .cert h3 { font-size: 1.25rem; margin: 12px 0 6px; }
-    .cert p { color: var(--muted); font-size: .93rem; }
-    .cert-btn { display: inline-block; margin-top: 16px; padding: 10px 20px; border-radius: 12px; font-weight: 600; font-size: .92rem; color: #052e1c; background: linear-gradient(135deg, #2ee59d, #19c37d); box-shadow: 0 8px 22px rgba(46,229,157,.35); transition: transform .25s, box-shadow .25s; }
-    .cert:hover .cert-btn, .cert:focus-visible .cert-btn { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(46,229,157,.55); }
+    .cert h3 { font-size: 1.12rem; margin: 10px 0 6px; }
+    .cert p { color: var(--muted); font-size: .88rem; margin-bottom: 16px; }
+    .cert-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding: 10px 22px; border-radius: 999px; font-family: ui-monospace, SFMono-Regular, "JetBrains Mono", Consolas, Menlo, monospace; font-weight: 600; font-size: .9rem; letter-spacing: .2px; color: #3ee6a0;
+      background: rgba(10,64,44,.72); border: 1px solid rgba(46,229,157,.5); -webkit-backdrop-filter: blur(14px) saturate(150%); backdrop-filter: blur(14px) saturate(150%);
+      box-shadow: 0 6px 22px rgba(46,229,157,.22), inset 0 0 14px rgba(46,229,157,.12);
+      animation: certPulse 2.6s ease-in-out infinite;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s, background .35s, color .35s; }
+    .cert-btn::before { content: ""; flex: none; width: 1.05em; height: 1.05em; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 3v5h5'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 3v5h5'/%3E%3C/svg%3E") center / contain no-repeat; transition: transform .35s; }
+    .cert-btn::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 40%; z-index: -1; pointer-events: none; background: linear-gradient(110deg, transparent, rgba(46,229,157,.35), transparent); transform: translateX(-150%) skewX(-20deg); animation: certShine 3.2s ease-in-out infinite; }
+    .cert:hover .cert-btn, .cert:focus-visible .cert-btn { transform: translateY(-3px) scale(1.05); color: #7dffc6; background: rgba(12,84,58,.82); border-color: rgba(46,229,157,.9); box-shadow: 0 12px 34px rgba(46,229,157,.45), 0 0 0 4px rgba(46,229,157,.15), inset 0 0 18px rgba(46,229,157,.2); }
+    .cert:hover .cert-btn::before, .cert:focus-visible .cert-btn::before { transform: rotate(-8deg) scale(1.15); }
+    .cert:active .cert-btn { transform: translateY(0) scale(.97); }
+    @keyframes certPulse { 0%,100% { box-shadow: 0 6px 22px rgba(46,229,157,.22), 0 0 0 0 rgba(46,229,157,.4), inset 0 0 14px rgba(46,229,157,.12); } 50% { box-shadow: 0 6px 22px rgba(46,229,157,.22), 0 0 0 9px rgba(46,229,157,0), inset 0 0 14px rgba(46,229,157,.12); } }
+    @keyframes certShine { 0%, 55% { transform: translateX(-150%) skewX(-20deg); } 100% { transform: translateX(380%) skewX(-20deg); } }
 
 
 
@@ -495,7 +504,7 @@
               <span class="cert-badge">CognitiveClass.ai &middot; IBM</span>
               <span class="cert-open">View Certificate PDF &#8599;</span>
             </div>
-            <div class="body"><span class="cert-tag">Certification</span><h3>Python 101 for Data Science</h3><p>Course PY0101EN by IBM, completed on Cognitive Class (IBM Developer Skills Network). Issued October 24, 2026.</p><span class="cert-btn">View Certificate PDF &#8599;</span></div>
+            <div class="body"><span class="cert-tag">Certification</span><h3>Python 101 for Data Science</h3><p>Course PY0101EN by IBM, completed on Cognitive Class (IBM Developer Skills Network). Issued October 24, 2026.</p><span class="cert-btn">View Certificate PDF</span></div>
           </a>
           <a class="card cert reveal zoom" href="certificates/SQL_IBM.pdf" target="_blank" rel="noopener" aria-label="Open SQL and Relational Databases 101 certificate (PDF)">
             <div class="cert-img">
@@ -503,7 +512,7 @@
               <span class="cert-badge">CognitiveClass.ai &middot; IBM</span>
               <span class="cert-open">View Certificate &#8599;</span>
             </div>
-            <div class="body"><span class="cert-tag">Certification</span><h3>SQL and Relational Databases 101</h3><p>Course DB0101EN by IBM Skills Network, completed on Cognitive Class. Issued October 25, 2026.</p><span class="cert-btn">View Certificate PDF &#8599;</span></div>
+            <div class="body"><span class="cert-tag">Certification</span><h3>SQL and Relational Databases 101</h3><p>Course DB0101EN by IBM Skills Network, completed on Cognitive Class. Issued October 25, 2026.</p><span class="cert-btn">View Certificate PDF</span></div>
           </a>
         </div>
         <p class="note">Click a certificate to open its PDF.</p>
